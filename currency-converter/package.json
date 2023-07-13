@@ -1,6 +1,7 @@
 {
   "name": "currency-converter",
   "version": "0.0.0",
+  "homepage": "https://MaltsevaYulia.github.io/test-ITOP1000/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
