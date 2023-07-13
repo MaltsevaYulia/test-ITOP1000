@@ -97,6 +97,13 @@
             ],
             "scripts": []
           }
+        },
+        "ghpages": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "repo": "https://github.com/MaltsevaYulia/test-ITOP1000",
+            "branch": "gh-pages"
+          }
         }
       }
     }
