@@ -8,6 +8,8 @@ import { CurrencyConverterComponent } from './components/currency-converter/curr
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CurrencySelectComponent } from './components/currency-select/currency-select.component';
+import { CurrencyOptionComponent } from './components/currency-option/currency-option.component';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     ExchangeRateHeaderComponent,
     CurrencyConverterComponent,
+    CurrencySelectComponent,
+    CurrencyOptionComponent,
     
   ],
   imports: [

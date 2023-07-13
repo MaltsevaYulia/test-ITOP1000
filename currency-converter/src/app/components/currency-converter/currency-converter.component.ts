@@ -41,6 +41,14 @@ convertToCurrency() {
   }
 }
  
+  selectCurrency(currency: string, target: string) {
+  if (target === 'fromCurrency') {
+    this.fromCurrency = currency;
+  } else if (target === 'toCurrency') {
+    this.toCurrency = currency;
+  }
+  
+}
 
   getConversionRate(fromCurrency: string, toCurrency: string): number | undefined {
   if (this.rates && this.rates.conversion_rates) {

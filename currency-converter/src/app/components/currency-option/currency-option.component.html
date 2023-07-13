@@ -1,0 +1,15 @@
+<div
+  class="currency-option flex items-center py-2 px-4 cursor-pointer"
+  [class.selected]="currency === selectedCurrency"
+  (click)="selectCurrency()"
+>
+  <img
+    src="https://hatscripts.github.io/circle-flags/flags/{{
+      codes[currency]
+    }}.svg"
+    width="48"
+    alt="{{ currency }} flag"
+    class="h-4 w-4 mr-2 inline-block"
+  />
+  <span class="currency-name">{{ currency }}</span>
+</div>
