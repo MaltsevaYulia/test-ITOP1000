@@ -1,5 +1,3 @@
-import { rates as data } from './data/rates';
-
 import { ExchangeRateService } from './services/exchange-rate.service';
 import { IRates } from './models/rates';
 import { Component, OnInit } from '@angular/core';
@@ -15,18 +13,15 @@ export class AppComponent implements OnInit {
 
   constructor(private exchangeRateService: ExchangeRateService){}
 
-  rates: IRates=data
+  rates: IRates
   
   ngOnInit(): void {
-    console.log('this is ExchangeRateHeaderComponent')
   this.exchangeRateService.getExchangeRate().subscribe(
     (data) => {
-      // Обработка полученных данных курса валют
-      console.log(data); // Пример вывода данных в консоль
+      console.log(data); 
       this.rates=data
     },
     (error) => {
-      // Обработка ошибки
       console.error(error);
     }
   );

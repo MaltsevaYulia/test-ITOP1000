@@ -10,7 +10,7 @@ export class ExchangeRateService {
   constructor(private http: HttpClient) { }
 
   getExchangeRate(): Observable<any> {
-  const apiUrl = 'https://v6.exchangerate-api.com/v6/78a13115cecea575ac813357/latest/USD'; 
+  const apiUrl = `https://v6.exchangerate-api.com/v6/78a13115cecea575ac813357/latest/USD`; 
   return this.http.get(apiUrl);
 }
 }

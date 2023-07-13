@@ -1,7 +1,7 @@
-import { Currency } from './../../models/currency';
+import { countryCodes } from './../../data/countryCodes';
 import { IRates } from './../../models/rates';
-import { Component,OnInit,Input } from '@angular/core';
-import { ExchangeRateService } from '../../services/exchange-rate.service'
+import { Component,Input} from '@angular/core';
+import { ICodes } from 'src/app/models/codes';
 
 
 @Component({
@@ -9,19 +9,15 @@ import { ExchangeRateService } from '../../services/exchange-rate.service'
   templateUrl: './currency-converter.component.html',
   styleUrls: ['./currency-converter.component.scss']
 })
-export class CurrencyConverterComponent {
-  // constructor(private exchangeRateService: ExchangeRateService) { }
+export class CurrencyConverterComponent  {
   
-  @Input() rates!: IRates
+  @Input() rates!: IRates 
+  @Input() codes: ICodes=countryCodes
 
-  // form = new FormGroup({
-    
-  // })
-
-  fromCurrency!: string;
-toCurrency!: string;
-fromAmount!: number;
-toAmount!: number;
+  fromCurrency = 'USD';
+  toCurrency = 'UAH';
+  fromAmount = 1;
+  toAmount: number 
 
   getConversionRatesKeys(): string[] {
   return Object.keys(this.rates.conversion_rates);
@@ -44,6 +40,7 @@ convertToCurrency() {
     }
   }
 }
+ 
 
   getConversionRate(fromCurrency: string, toCurrency: string): number | undefined {
   if (this.rates && this.rates.conversion_rates) {
@@ -58,20 +55,7 @@ convertToCurrency() {
   }
 
   return undefined;
-}
-
+  }
   
-//   ngOnInit(): void {
-//     console.log('this is ExchangeRateHeaderComponent')
-//   this.exchangeRateService.getExchangeRate().subscribe(
-//     (data) => {
-//       // Обработка полученных данных курса валют
-//       console.log(data); // Пример вывода данных в консоль
-//     },
-//     (error) => {
-//       // Обработка ошибки
-//       console.error(error);
-//     }
-//   );
-//}
+
 }
