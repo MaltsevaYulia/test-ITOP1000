@@ -24,10 +24,12 @@ export class CurrencyConverterComponent  {
   }
   
   convertFromCurrency() {
-  if (this.fromCurrency && this.toCurrency) {
+  if (this.fromCurrency && this.toCurrency ) {
     const conversionRate = this.getConversionRate(this.fromCurrency, this.toCurrency);
     if (conversionRate) {
-      this.toAmount = this.fromAmount * conversionRate;
+      const result =+(this.fromAmount * conversionRate).toFixed(4)
+      // this.toAmount = this.fromAmount * conversionRate;
+      this.toAmount =result
     }
   }
 }
@@ -36,7 +38,9 @@ convertToCurrency() {
   if (this.fromCurrency && this.toCurrency) {
     const conversionRate = this.getConversionRate(this.toCurrency, this.fromCurrency);
     if (conversionRate) {
-      this.fromAmount = this.toAmount * conversionRate;
+      const result= +(this.toAmount * conversionRate).toFixed(4)
+      // this.fromAmount = this.toAmount * conversionRate;
+      this.fromAmount = result
     }
   }
 }
